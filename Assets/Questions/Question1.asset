@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question1
   m_EditorClassIdentifier: 
   question: What is the captial of France.
+  answers:
+  - London
+  - Moscow
+  - Paris
+  - Oslo
+  correctAnswerIndex: 2
