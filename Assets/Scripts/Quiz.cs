@@ -15,6 +15,40 @@ public class Quiz : MonoBehaviour
 
     void Start()
     {
+        DisplayQuestion();
+    }
+
+    public void OnAnswerSelected(int index)
+    {
+        Image buttonImage;
+
+        if (index == question.GetCorrectAnswerIndex())
+        {
+            questionText.text = "Correct!";
+            buttonImage = answerButtons[index].GetComponent<Image>();
+            buttonImage.sprite = correctAnswerSprite;
+        }
+        else
+        {
+            correctAnswerIndex = question.GetCorrectAnswerIndex();
+            string correctAnswer = question.GetAnswer(correctAnswerIndex);
+            questionText.text = "Sorry, the correct answer was;\n " + correctAnswer;
+
+            buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
+            buttonImage.sprite = correctAnswerSprite;
+        }
+
+        SetButtonState(false);
+    }
+
+    void GetNextQuestion()
+    {
+        SetButtonState(true);
+        SetDefaultButtonSprite();
+        DisplayQuestion();
+    }
+    void DisplayQuestion()
+    {
         questionText.text = question.GetQuestion();
         for (int i = 0; i < answerButtons.Length; i++)
         {
@@ -23,15 +57,23 @@ public class Quiz : MonoBehaviour
         }
     }
 
-    public void OnAnswerSelected(int index)
+    void SetButtonState(bool state)
     {
-        if(index == question.GetCorrectAnswerIndex())
+        for (int i = 0; i < answerButtons.Length; i++)
         {
-            questionText.text = "Correct!";
-            Image buttonImage = answerButtons[index].GetComponent<Image>();
-            buttonImage.sprite = correctAnswerSprite;
+            Button button = answerButtons[i].GetComponent<Button>();
+            button.interactable = state;
         }
     }
 
+    void SetDefaultButtonSprite()
+    {
+        Image buttonImage;
 
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            buttonImage = answerButtons[i].GetComponent<Image>();
+            buttonImage.sprite = defaultAnswerSprite;
+        }
+    }
 }
