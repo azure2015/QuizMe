@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     public float fillFraction;
 
 
-    bool isAnsweringQuestion;
+    public bool isAnsweringQuestion;
     float timerValue;
 
     void Update()

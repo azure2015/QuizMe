@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question4
   m_EditorClassIdentifier: 
   question: What is the highest moutain in Ireland
+  answers:
+  - Ben Nevis
+  - Carn Edge
+  - Corran Tuathall
+  - Caher West Top
+  correctAnswerIndex: 2

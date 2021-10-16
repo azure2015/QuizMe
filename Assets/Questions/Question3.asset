@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question3
   m_EditorClassIdentifier: 
   question: Where is victoria falls.
+  answers:
+  - Zambia
+  - Zambia and Zimbadwe
+  - Zimbadwe and South Africa
+  - South Africa
+  correctAnswerIndex: 1

@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question5
   m_EditorClassIdentifier: 
   question: Which rivers runs through London.
+  answers:
+  - Nile
+  - Avon
+  - Wye
+  - Thames
+  correctAnswerIndex: 3
